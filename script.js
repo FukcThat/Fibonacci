@@ -25,3 +25,18 @@ function fibs(n) {
 }
 
 console.log(fibs(8));
+
+function fibsRec(n) {
+  if (n === 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  let resultRec = fibsRec(n - 1);
+  resultRec.push(
+    resultRec[resultRec.length - 1] + resultRec[resultRec.length - 2]
+  );
+
+  return resultRec;
+}
+
+console.log(fibsRec(8));
